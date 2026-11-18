@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "GestionCommerciale.Application/1.0.0": {
+        "dependencies": {
+          "GestionCommerciale.Domain": "1.0.0"
+        },
+        "runtime": {
+          "GestionCommerciale.Application.dll": {}
+        }
+      },
+      "GestionCommerciale.Domain/1.0.0": {
+        "runtime": {
+          "GestionCommerciale.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GestionCommerciale.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GestionCommerciale.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

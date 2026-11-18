@@ -1,0 +1,12 @@
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\bin\Debug\net8.0\GestionCommerciale.Domain.deps.json
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\bin\Debug\net8.0\GestionCommerciale.Domain.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\bin\Debug\net8.0\GestionCommerciale.Domain.pdb
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\obj\Debug\net8.0\GestionCommerciale.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\obj\Debug\net8.0\GestionCommerciale.Domain.AssemblyInfoInputs.cache
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\obj\Debug\net8.0\GestionCommerciale.Domain.AssemblyInfo.cs
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\obj\Debug\net8.0\GestionCommerciale.Domain.csproj.CoreCompileInputs.cache
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\obj\Debug\net8.0\GestionCommerciale.Domain.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\obj\Debug\net8.0\refint\GestionCommerciale.Domain.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\obj\Debug\net8.0\GestionCommerciale.Domain.pdb
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\obj\Debug\net8.0\ref\GestionCommerciale.Domain.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Domain\obj\Debug\net8.0\GestionC.3DDED35F.Up2Date

@@ -1,0 +1,286 @@
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand-copy">
+      <strong>Gestion commerciale</strong>
+    </div>
+    <nav aria-label="Navigation principale">
+      <button type="button" [class.active]="section === 'clients'" (click)="selectSection('clients')">
+        Clients
+      </button>
+      <button type="button" [class.active]="section === 'products'" (click)="selectSection('products')">
+        Produits
+      </button>
+      <button type="button" [class.active]="section === 'orders'" (click)="selectSection('orders')">
+        Commandes
+      </button>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <h1>Gestion commerciale</h1>
+    </header>
+
+    <div class="alerts" aria-live="polite">
+      <div class="alert error" *ngIf="errorMessage">
+        <span>{{ errorMessage }}</span>
+        <button type="button" aria-label="Fermer" (click)="errorMessage = ''">×</button>
+      </div>
+      <div class="alert success" *ngIf="successMessage">
+        <span>{{ successMessage }}</span>
+        <button type="button" aria-label="Fermer" (click)="successMessage = ''">×</button>
+      </div>
+    </div>
+
+    <section *ngIf="section === 'clients'">
+      <div class="page-heading">
+        <h2>Clients</h2>
+      </div>
+
+      <div class="content-grid">
+        <section class="card form-card">
+          <div class="card-heading">
+            <div>
+              <h3>{{ editingClientId === null ? 'Nouveau client' : 'Modifier le client' }}</h3>
+            </div>
+          </div>
+          <form (ngSubmit)="saveClient()" #clientNgForm="ngForm">
+            <label>Nom *
+              <input name="lastName" [(ngModel)]="clientForm.lastName" required maxlength="100" />
+            </label>
+            <label>Prénom
+              <input name="firstName" [(ngModel)]="clientForm.firstName" maxlength="100" />
+            </label>
+            <label>Email
+              <input name="email" type="email" [(ngModel)]="clientForm.email" maxlength="254" />
+            </label>
+            <label>Téléphone
+              <input name="phone" [(ngModel)]="clientForm.phone" maxlength="30" />
+            </label>
+            <label>Adresse
+              <textarea name="address" [(ngModel)]="clientForm.address" rows="2" maxlength="500"></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="button primary" type="submit" [disabled]="clientNgForm.invalid">
+                {{ editingClientId === null ? 'Créer le client' : 'Enregistrer' }}
+              </button>
+              <button class="button secondary" type="button" *ngIf="editingClientId !== null" (click)="cancelClientEdit()">
+                Annuler
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="card table-card">
+          <div class="card-heading">
+            <div>
+              <h3>Liste des clients</h3>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Identifiant</th><th>Nom</th><th>Prénom</th><th>Email</th><th>Téléphone</th><th>Adresse</th><th>Date de création</th><th class="actions-col">Actions</th></tr></thead>
+              <tbody>
+                <tr *ngFor="let client of clients">
+                  <td>{{ client.id }}</td>
+                  <td>{{ client.lastName }}</td>
+                  <td>{{ client.firstName || '—' }}</td>
+                  <td>{{ client.email || '—' }}</td>
+                  <td>{{ client.phone || '—' }}</td>
+                  <td>{{ client.address || '—' }}</td>
+                  <td>{{ client.createdAt | date:'shortDate' }}</td>
+                  <td class="actions">
+                    <button class="icon-button" type="button" aria-label="Modifier" (click)="editClient(client)">Modifier</button>
+                    <button class="icon-button danger-text" type="button" aria-label="Supprimer" (click)="deleteClient(client)">Supprimer</button>
+                  </td>
+                </tr>
+                <tr *ngIf="clients.length === 0"><td colspan="8" class="empty-state">Aucun client enregistré.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section *ngIf="section === 'products'">
+      <div class="page-heading">
+        <h2>Produits</h2>
+      </div>
+
+      <div class="content-grid">
+        <section class="card form-card">
+          <div class="card-heading">
+            <div>
+              <h3>{{ editingProductId === null ? 'Nouveau produit' : 'Modifier le produit' }}</h3>
+            </div>
+          </div>
+          <form (ngSubmit)="saveProduct()" novalidate>
+            <label>Référence *
+              <input name="reference" [(ngModel)]="productForm.reference" required maxlength="50" />
+            </label>
+            <label>Nom du produit *
+              <input name="name" [(ngModel)]="productForm.name" required maxlength="150" />
+            </label>
+            <label>Description
+              <textarea name="description" [(ngModel)]="productForm.description" rows="2" maxlength="1000"></textarea>
+            </label>
+            <div class="form-row">
+              <label>Prix unitaire HT *
+                <input name="unitPrice" type="number" [(ngModel)]="productForm.unitPrice" min="0" step="0.01" required />
+              </label>
+              <label>Stock *
+                <input name="stockQuantity" type="number" [(ngModel)]="productForm.stockQuantity" min="0" step="1" required />
+              </label>
+            </div>
+            <div class="form-actions">
+              <button class="button primary" type="submit">
+                {{ editingProductId === null ? 'Créer le produit' : 'Enregistrer' }}
+              </button>
+              <button class="button secondary" type="button" *ngIf="editingProductId !== null" (click)="cancelProductEdit()">
+                Annuler
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="card table-card">
+          <div class="card-heading">
+            <div>
+              <h3>Liste des produits</h3>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Identifiant</th><th>Référence</th><th>Nom</th><th>Description</th><th>Prix unitaire HT</th><th>Quantité en stock</th><th>Date de création</th><th class="actions-col">Actions</th></tr></thead>
+              <tbody>
+                <tr *ngFor="let product of products">
+                  <td>{{ product.id }}</td>
+                  <td>{{ product.reference }}</td>
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.description || '—' }}</td>
+                  <td class="money">{{ product.unitPrice | number:'1.2-2' }} DT</td>
+                  <td>{{ product.stockQuantity }}</td>
+                  <td>{{ product.createdAt | date:'shortDate' }}</td>
+                  <td class="actions">
+                    <button class="icon-button" type="button" aria-label="Modifier" (click)="editProduct(product)">Modifier</button>
+                    <button class="icon-button danger-text" type="button" aria-label="Supprimer" (click)="deleteProduct(product)">Supprimer</button>
+                  </td>
+                </tr>
+                <tr *ngIf="products.length === 0"><td colspan="8" class="empty-state">Aucun produit enregistré.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section *ngIf="section === 'orders'">
+      <div class="page-heading">
+        <h2>Commandes</h2>
+      </div>
+
+      <section class="card order-detail" *ngIf="selectedOrder">
+        <button class="button secondary" type="button" (click)="backToOrders()">Retour à la liste</button>
+        <h3>Détail de la commande</h3>
+        <dl>
+          <div><dt>Identifiant</dt><dd>{{ selectedOrder.id }}</dd></div>
+          <div><dt>Numéro de commande</dt><dd>{{ selectedOrder.orderNumber }}</dd></div>
+          <div><dt>Client</dt><dd>{{ selectedOrder.clientName }}</dd></div>
+          <div><dt>Date de commande</dt><dd>{{ selectedOrder.orderDate | date:'short' }}</dd></div>
+          <div><dt>Statut</dt><dd>{{ selectedOrder.status }}</dd></div>
+          <div><dt>Total HT</dt><dd>{{ selectedOrder.totalHT | number:'1.2-2' }} DT</dd></div>
+          <div><dt>Total TTC</dt><dd>{{ selectedOrder.totalTTC | number:'1.2-2' }} DT</dd></div>
+        </dl>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Produit</th><th>Quantité</th><th>Prix unitaire</th><th>Total ligne</th></tr></thead>
+            <tbody>
+              <tr *ngFor="let line of selectedOrder.lines">
+                <td>{{ line.productReference }} — {{ line.productName }}</td>
+                <td>{{ line.quantity }}</td>
+                <td>{{ line.unitPrice | number:'1.2-2' }} DT</td>
+                <td>{{ line.lineTotal | number:'1.2-2' }} DT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <ng-container *ngIf="!selectedOrder">
+      <section class="card order-form-card">
+        <div class="card-heading">
+          <div>
+            <h3>{{ editingOrderId === null ? 'Nouvelle commande' : 'Modifier la commande' }}</h3>
+          </div>
+        </div>
+        <form (ngSubmit)="saveOrder()" #orderNgForm="ngForm">
+          <div class="order-form-top">
+            <label class="client-select">Client *
+              <select name="orderClient" [(ngModel)]="orderForm.clientId" required>
+                <option [ngValue]="null" disabled>Choisir un client</option>
+                <option *ngFor="let client of clients" [ngValue]="client.id">{{ client.firstName }} {{ client.lastName }}</option>
+              </select>
+            </label>
+            <button class="button secondary" type="button" (click)="addOrderLine()">+ Ajouter un produit</button>
+          </div>
+          <div class="order-lines">
+            <div class="order-line-head"><span>Produit</span><span>Quantité</span><span>Prix unitaire</span><span>Total ligne</span><span></span></div>
+            <div class="order-line" *ngFor="let line of orderForm.lines; let i = index">
+              <select [name]="'product' + i" [(ngModel)]="line.productId" required>
+                <option [ngValue]="null" disabled>Choisir un produit</option>
+                <option *ngFor="let product of products" [ngValue]="product.id" [disabled]="availableStock(product.id) === 0">
+                  {{ product.reference }} — {{ product.name }} (stock disponible {{ availableStock(product.id) }})
+                </option>
+              </select>
+              <input [name]="'quantity' + i" type="number" [(ngModel)]="line.quantity" min="1" [max]="line.productId ? availableStock(line.productId) : null" step="1" required />
+              <span class="money"><ng-container *ngIf="productForLine(line.productId) as selectedProduct">{{ selectedProduct.unitPrice | number:'1.2-2' }} DT</ng-container></span>
+              <strong class="money"><ng-container *ngIf="productForLine(line.productId) && line.quantity !== null && line.quantity > 0">{{ lineTotal(line) | number:'1.2-2' }} DT</ng-container></strong>
+              <button class="remove-line" type="button" [disabled]="orderForm.lines.length === 1" (click)="removeOrderLine(i)" aria-label="Retirer la ligne">×</button>
+            </div>
+          </div>
+          <div class="order-form-bottom">
+            <div class="totals-preview" *ngIf="hasCalculatedTotals()">
+              <span>Total HT <strong>{{ orderTotalHT() | number:'1.2-2' }} DT</strong></span>
+              <span>Total TTC (TVA 19 %) <strong>{{ orderTotalHT() * 1.19 | number:'1.2-2' }} DT</strong></span>
+            </div>
+            <div class="form-actions">
+              <button class="button primary" type="submit" [disabled]="orderNgForm.invalid || clients.length === 0 || products.length === 0">
+                {{ editingOrderId === null ? 'Créer le brouillon' : 'Enregistrer' }}
+              </button>
+              <button class="button secondary" type="button" *ngIf="editingOrderId !== null" (click)="cancelOrderEdit()">Annuler</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="card table-card orders-table">
+        <div class="card-heading">
+          <div><h3>Liste des commandes</h3></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Commande</th><th>Client</th><th>Date</th><th>Statut</th><th>Total HT</th><th>Total TTC</th><th class="actions-col">Actions</th></tr></thead>
+            <tbody>
+              <tr *ngFor="let order of orders">
+                <td>{{ order.orderNumber }}</td>
+                <td>{{ order.clientName }}</td>
+                <td>{{ order.orderDate | date:'short' }}</td>
+                <td>{{ order.status }}</td>
+                <td class="money">{{ order.totalHT | number:'1.2-2' }} DT</td>
+                <td class="money">{{ order.totalTTC | number:'1.2-2' }} DT</td>
+                <td class="actions">
+                  <button class="icon-button" type="button" (click)="showOrderDetails(order)">Détail</button>
+                  <button class="icon-button" type="button" (click)="editOrder(order)">Modifier</button>
+                  <button class="icon-button" type="button" *ngIf="order.status === 'Brouillon'" (click)="validateOrder(order)">Valider</button>
+                  <button class="icon-button danger-text" type="button" (click)="deleteOrder(order)">Supprimer</button>
+                </td>
+              </tr>
+              <tr *ngIf="orders.length === 0"><td colspan="7" class="empty-state">Aucune commande enregistrée.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      </ng-container>
+    </section>
+  </main>
+</div>

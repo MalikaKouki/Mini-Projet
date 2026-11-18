@@ -1,0 +1,15 @@
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\bin\Debug\net8.0\GestionCommerciale.Application.deps.json
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\bin\Debug\net8.0\GestionCommerciale.Application.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\bin\Debug\net8.0\GestionCommerciale.Application.pdb
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\bin\Debug\net8.0\GestionCommerciale.Domain.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\bin\Debug\net8.0\GestionCommerciale.Domain.pdb
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\obj\Debug\net8.0\GestionCommerciale.Application.csproj.AssemblyReference.cache
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\obj\Debug\net8.0\GestionCommerciale.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\obj\Debug\net8.0\GestionCommerciale.Application.AssemblyInfoInputs.cache
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\obj\Debug\net8.0\GestionCommerciale.Application.AssemblyInfo.cs
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\obj\Debug\net8.0\GestionCommerciale.Application.csproj.CoreCompileInputs.cache
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\obj\Debug\net8.0\GestionC.975CA4A6.Up2Date
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\obj\Debug\net8.0\GestionCommerciale.Application.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\obj\Debug\net8.0\refint\GestionCommerciale.Application.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\obj\Debug\net8.0\GestionCommerciale.Application.pdb
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Application\obj\Debug\net8.0\ref\GestionCommerciale.Application.dll

@@ -1,0 +1,17 @@
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\bin\Debug\net8.0\GestionCommerciale.Infrastructure.deps.json
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\bin\Debug\net8.0\GestionCommerciale.Infrastructure.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\bin\Debug\net8.0\GestionCommerciale.Infrastructure.pdb
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\bin\Debug\net8.0\GestionCommerciale.Application.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\bin\Debug\net8.0\GestionCommerciale.Domain.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\bin\Debug\net8.0\GestionCommerciale.Domain.pdb
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\bin\Debug\net8.0\GestionCommerciale.Application.pdb
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\obj\Debug\net8.0\GestionCommerciale.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\obj\Debug\net8.0\GestionCommerciale.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\obj\Debug\net8.0\GestionCommerciale.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\obj\Debug\net8.0\GestionCommerciale.Infrastructure.AssemblyInfo.cs
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\obj\Debug\net8.0\GestionCommerciale.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\obj\Debug\net8.0\GestionC.A337AA53.Up2Date
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\obj\Debug\net8.0\GestionCommerciale.Infrastructure.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\obj\Debug\net8.0\refint\GestionCommerciale.Infrastructure.dll
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\obj\Debug\net8.0\GestionCommerciale.Infrastructure.pdb
+C:\Users\malik\OneDrive\Desktop\mini projet\GestionCommerciale.Infrastructure\obj\Debug\net8.0\ref\GestionCommerciale.Infrastructure.dll
